@@ -1,7 +1,7 @@
 node {
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
-      bat 'git clone git@github.com:Camelchen/Selenium.Framework.git'
+      bat 'git clone https://github.com/Camelchen/Selenium.Framework.git'
   
    }
    stage('Build') {
