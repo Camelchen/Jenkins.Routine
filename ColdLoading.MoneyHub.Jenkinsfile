@@ -5,11 +5,11 @@ node {
   
    }
    stage('Build') {
-      bat 'dotnet restore Selenium.Framework.sln'
-      bat "\"${tool 'MSBuild'}\" SolutionName.sln /p:Configuration=Release /p:Platform=\"Any CPU\" "
+      bat 'dotnet restore ./Selenium.Framework/Selenium.Framework.sln'
+      bat "\"${tool 'MSBuild'}\" ./Selenium.Framework/SolutionName.sln /p:Configuration=Release /p:Platform=\"Any CPU\" "
    }
    stage('Execute') {
-      bat 'dotnet Selenium.Droid.ColdLoading/bin/Release/netcoreapp2.1/Selenium.Droid.ColdLoading.dll MoneyHub'
+      bat 'dotnet ./Selenium.Framework/Selenium.Droid.ColdLoading/bin/Release/netcoreapp2.1/Selenium.Droid.ColdLoading.dll MoneyHub'
    }
    stage('Archive') {
       archive 'Selenium.Droid.ColdLoading/bin/Release/**' 
