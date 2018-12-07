@@ -7,7 +7,7 @@ node {
    }
    stage('Build') {
       bat 'dotnet restore ./Selenium.Framework/Selenium.Framework.sln'
-      bat 'dotnet build ./Selenium.Framework/Selenium.Framework.sln /p:Configuration=Release'
+      bat 'dotnet build ./Selenium.Framework/Selenium.Droid.ColdLoading/Selenium.Droid.ColdLoading.csproj /p:Configuration=Release'
    }
    stage('Execute') {
       bat 'dotnet ./Selenium.Framework/Selenium.Droid.ColdLoading/bin/Release/netcoreapp2.1/Selenium.Droid.ColdLoading.dll MoneyHub'
