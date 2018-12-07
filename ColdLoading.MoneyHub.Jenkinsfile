@@ -5,7 +5,7 @@ node {
   
    }
    stage('Build') {
-      bat 'nuget restore Selenium.Framework.sln'
+      bat 'dotnet restore Selenium.Framework.sln'
       bat "\"${tool 'MSBuild'}\" SolutionName.sln /p:Configuration=Release /p:Platform=\"Any CPU\" "
    }
    stage('Execute') {
